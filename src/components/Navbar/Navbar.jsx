@@ -7,19 +7,39 @@ export default function Navbar() {
   const [active, setActive] = useState("Home");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hideNav, setHideNav] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 50);
+
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        // Scrolling DOWN → hide nav + animate out
+        setHideNav(true);
+
+        // After animation finishes (~300ms), reset dropdown state
+        setTimeout(() => {
+          setMenuOpen(false);
+        }, 300);
+      } else {
+        // Scrolling UP → show nav again
+        setHideNav(false);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <>
-    <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
+    <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""} ${hideNav ? "navbar-hidden" : ""}`}>
       <div className="navbar-container">
-        {/* Logo */}
-        <div className="navbar-logo">portfolio</div>
+        <div className="navbar-logo">pt</div>
 
         {/* Desktop Links */}
         <div className="navbar-right">
@@ -30,7 +50,7 @@ export default function Navbar() {
                   className={`nav-link ${active === link ? "active" : ""}`}
                   onClick={() => {
                     setActive(link);
-                    setMenuOpen(false); // close menu on selection
+                    setMenuOpen(false);
                   }}
                 >
                   {link}
@@ -39,9 +59,9 @@ export default function Navbar() {
             ))}
           </ul>
           <button className="navbar-connect">CONNECT</button>
-          </div>
+        </div>
 
-        {/* Hamburger Button (Mobile) */}
+        {/* Hamburger (mobile) */}
         <button
           className={`hamburger ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen((prev) => !prev)}
@@ -53,10 +73,8 @@ export default function Navbar() {
         </button>
       </div>
 
-    </nav>
-
-    {/* Mobile Dropdown Menu */}
-    <div className={`mobile-menu ${menuOpen ? "show" : ""}`}>
+      {/* Mobile Dropdown */}
+      <div className={`mobile-menu ${menuOpen ? "show" : ""} ${hideNav ? "mobile-menu-hidden" : ""}`}>
         <ul>
           {NAV_LINKS.map((link) => (
             <li key={link}>
@@ -73,6 +91,6 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-    </>
+    </nav>
   );
 }
