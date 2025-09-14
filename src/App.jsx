@@ -4,21 +4,34 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import UXUI from "./pages/UXUI";
+import Graphics from "./pages/Graphics";
+import Gallery from "./pages/Gallery";
+import Code from "./pages/Code";
+import About from "./pages/About";
+import Connect from './pages/Connect'
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
+    <Router>
       <Navbar />
       <main style={{ paddingTop: "80px" }}>
-        <section className='hero'>
-          <h1>Hero Section</h1>
-        </section>
-        <section style={{ height: "200vh" }}>
-          <p>Scroll down to see navbar background change</p>
-        </section>
+
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path="/ux-ui" element={<UXUI />} />
+          <Route path="/graphics" element={<Graphics />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/code" element={<Code />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/connect" element={<Connect />} />
+        </Routes>
+        
       </main>
-    </>
+    </Router>
   )
 }
 

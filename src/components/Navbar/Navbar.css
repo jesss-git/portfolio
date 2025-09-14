@@ -1,4 +1,13 @@
 /* Base Navbar */
+/* Reset focus for links instead of buttons */
+a:focus {
+  outline: none;
+}
+
+a:focus-visible {
+  box-shadow: 0 0 0 2px #D3A859;
+}
+
 button:focus {
   outline: none;
 }
@@ -62,6 +71,8 @@ button:focus-visible {
 }
 
 .nav-link {
+  text-decoration: none;
+  display: inline-block;
   position: relative;
   font-size: 0.95rem;
   background: transparent;
@@ -89,6 +100,7 @@ button:focus-visible {
 
 /* Connect button styled like nav-links but inverted */
 .navbar-connect {
+  text-decoration: none;
   padding: 0.4rem 0.8rem; 
   border-radius: 8px; 
   border: 2px solid white; 

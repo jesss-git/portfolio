@@ -1,10 +1,18 @@
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./Navbar.css";
 
-const NAV_LINKS = ["HOME", "UX/UI", "GRAPHICS", "GALLERY", "CODE", "ABOUT"];
+const NAV_LINKS = [
+  { name: "HOME", path: "/" },
+  { name: "UX/UI", path: "/ux-ui" },
+  { name: "GRAPHICS", path: "/graphics" },
+  { name: "GALLERY", path: "/gallery" },
+  { name: "CODE", path: "/code" },
+  { name: "ABOUT", path: "/about" }
+];
 
 export default function Navbar() {
-  const [active, setActive] = useState("Home");
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [hideNav, setHideNav] = useState(false);
@@ -45,20 +53,18 @@ export default function Navbar() {
         <div className="navbar-right">
           <ul className="navbar-links">
             {NAV_LINKS.map((link) => (
-              <li key={link}>
-                <button
-                  className={`nav-link ${active === link ? "active" : ""}`}
-                  onClick={() => {
-                    setActive(link);
-                    setMenuOpen(false);
-                  }}
-                >
-                  {link}
-                </button>
-              </li>
+              <li key={link.name}>
+              <Link
+                to={link.path}
+                className={`nav-link ${location.pathname === link.path ? "active" : ""}`}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            </li>
             ))}
           </ul>
-          <button className="navbar-connect">CONNECT</button>
+          <Link to="/connect" className="navbar-connect">CONNECT</Link>
         </div>
 
         {/* Hamburger (mobile) */}
@@ -77,17 +83,15 @@ export default function Navbar() {
       <div className={`mobile-menu ${menuOpen ? "show" : ""} ${hideNav ? "mobile-menu-hidden" : ""}`}>
         <ul>
           {NAV_LINKS.map((link) => (
-            <li key={link}>
-              <button
-                className={`nav-link ${active === link ? "active" : ""}`}
-                onClick={() => {
-                  setActive(link);
-                  setMenuOpen(false);
-                }}
-              >
-                {link}
-              </button>
-            </li>
+            <li key={link.name}>
+            <Link
+              to={link.path}
+              className={`nav-link ${location.pathname === link.path ? "active" : ""}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.name}
+            </Link>
+          </li>
           ))}
         </ul>
       </div>
