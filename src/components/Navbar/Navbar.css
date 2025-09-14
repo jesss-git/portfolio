@@ -1,4 +1,12 @@
 /* Base Navbar */
+button:focus {
+  outline: none;
+}
+
+button:focus-visible {
+  box-shadow: 0 0 0 2px #D3A859;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -12,7 +20,7 @@
 }
 
 .navbar-hidden {
-  transform: translateY(-100%);
+  transform: translateY(-105%);
 }
 
 .navbar-scrolled {
@@ -148,7 +156,7 @@
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease, opacity 0.35s ease, padding 0.3s ease;
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
   z-index: 999; /* above other content */
 }
 
