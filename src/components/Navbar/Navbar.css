@@ -1,21 +1,17 @@
-/* Base Navbar */
-/* Reset focus for links instead of buttons */
-a:focus {
+/* ===========================
+   Base Navbar & Reset
+=========================== */
+
+/* Remove focus outlines for links/buttons */
+a:focus, button:focus {
   outline: none;
 }
 
-a:focus-visible {
+a:focus-visible, button:focus-visible {
   box-shadow: 0 0 0 2px #D3A859;
 }
 
-button:focus {
-  outline: none;
-}
-
-button:focus-visible {
-  box-shadow: 0 0 0 2px #D3A859;
-}
-
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -33,7 +29,7 @@ button:focus-visible {
 }
 
 .navbar-scrolled {
-  background: rgba(0, 0, 0, 0.7); /* darker so white elements stand out */
+  background: rgba(0, 0, 0, 0.7);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(6px);
 }
@@ -61,7 +57,9 @@ button:focus-visible {
   color: white;
 }
 
-/* Desktop Links */
+/* ===========================
+   Desktop Links
+=========================== */
 .navbar-links {
   list-style: none;
   display: flex;
@@ -94,82 +92,81 @@ button:focus-visible {
   color: #D3A859;
 }
 
-.nav-link.active::after {
-  color: #D3A859;
-}
-
-/* Connect button styled like nav-links but inverted */
+/* Connect button */
 .navbar-connect {
   text-decoration: none;
-  padding: 0.4rem 0.8rem; 
-  border-radius: 8px; 
-  border: 2px solid white; 
-  background: white; 
-  color: black; 
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  border: 2px solid white;
+  background: white;
+  color: black;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-/* Hover effect: turn black with white text & border */
 .navbar-connect:hover {
   background: black;
   color: white;
   border-color: white;
 }
 
-
-/* Hamburger Menu (White) */
+/* ===========================
+   Hamburger Menu
+=========================== */
 .hamburger {
-  display: none;
+  display: none; /* only visible on tablet/mobile */
   flex-direction: column;
   justify-content: space-between;
-  width: 22px;
-  height: 16px;
-  background: none;
+  width: 30px;
+  height: 22px;
+  background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
+  z-index: 2000;
 }
 
 .hamburger span {
   display: block;
-  height: 2px;
-  background: white; /* changed to white */
-  transition: 0.3s;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 .hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translateY(6px);
+  transform: rotate(45deg) translateY(7px);
 }
+
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-6px);
+  transform: rotate(-45deg) translateY(-7px);
 }
 
-/* Mobile Dropdown (Animated) */
+/* ===========================
+   Mobile Dropdown
+=========================== */
 .mobile-menu {
-  position: absolute; /* changed from relative to absolute */
-  top: 100%; /* below navbar */
+  position: absolute;
+  top: 100%;
   left: 0;
   right: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  z-index: 1000;
-
   display: flex;
   flex-direction: column;
   background: white;
   padding: 0 2rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   border-top: 1px solid #ddd;
-
   max-height: 0;
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
-  z-index: 999; /* above other content */
+  z-index: 1500;
 }
 
 .mobile-menu.show {
@@ -182,7 +179,7 @@ button:focus-visible {
 .mobile-menu ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 1rem 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -193,13 +190,9 @@ button:focus-visible {
   align-self: flex-start;
 }
 
-.mobile-menu-hidden {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive Behavior */
-/* Make hamburger appear at a wider width (e.g. tablet breakpoint 1024px) */
+/* ===========================
+   Responsive: Tablet & Mobile
+=========================== */
 @media (max-width: 1024px) {
   .navbar-links {
     display: none;
@@ -212,10 +205,11 @@ button:focus-visible {
 
   .navbar-connect {
     display: inline-block;
+    
   }
-  
 }
 
+/* Extra small screens (phones) */
 @media (max-width: 480px) {
   .navbar-container {
     padding: 0.8rem 1rem;
@@ -227,12 +221,15 @@ button:focus-visible {
   }
 
   .hamburger {
-    display: flex;
-    background-color: white;
+    width: 26px;
+    height: 18px;
   }
 
   .hamburger span {
-    display: flex;
-    background-color: white;
+    height: 2.5px;
+  }
+
+  .mobile-menu {
+    padding: 0.8rem 1rem;
   }
 }
