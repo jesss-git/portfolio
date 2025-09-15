@@ -12,6 +12,7 @@ import Gallery from "./pages/Gallery";
 import Code from "./pages/Code";
 import About from "./pages/About";
 import Connect from './pages/Connect'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         </Routes>
         
       </main>
+      <Footer />
     </Router>
   )
 }
