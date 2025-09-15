@@ -229,9 +229,11 @@ button:focus-visible {
   .hamburger {
     width: 20px;
     height: 14px;
+    background-color: white;
   }
 
   .hamburger span {
     height: 2px;
+    background-color: white;
   }
 }
