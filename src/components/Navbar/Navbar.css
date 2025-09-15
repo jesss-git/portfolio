@@ -136,6 +136,7 @@ button:focus-visible {
   display: block;
   height: 2px;
   background: white; /* changed to white */
+  background-color: white;
   transition: 0.3s;
 }
 
