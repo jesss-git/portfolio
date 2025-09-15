@@ -227,13 +227,12 @@ button:focus-visible {
   }
 
   .hamburger {
-    width: 20px;
-    height: 14px;
+    display: flex;
     background-color: white;
   }
 
   .hamburger span {
-    height: 2px;
+    display: flex;
     background-color: white;
   }
 }
