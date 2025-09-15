@@ -136,7 +136,6 @@ button:focus-visible {
   display: block;
   height: 2px;
   background: white; /* changed to white */
-  background-color: white;
   transition: 0.3s;
 }
 
@@ -214,6 +213,25 @@ button:focus-visible {
   .navbar-connect {
     display: inline-block;
   }
-
   
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0.8rem 1rem;
+  }
+
+  .navbar-connect {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .hamburger {
+    width: 20px;
+    height: 14px;
+  }
+
+  .hamburger span {
+    height: 2px;
+  }
 }
