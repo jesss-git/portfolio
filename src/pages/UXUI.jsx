@@ -1,4 +1,8 @@
 export default function UXUI() {
-    return <h1>UX/UI Page</h1>;
+    return (
+      <section className="hero">
+        <h1>UX / UI</h1>
+      </section>
+    );
   }
   

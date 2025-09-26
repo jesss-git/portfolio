@@ -5,7 +5,7 @@ import './App.css'
 import Navbar from './components/Navbar/Navbar'
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import UXUI from "./pages/UXUI";
 import Graphics from "./pages/Graphics";
 import Gallery from "./pages/Gallery";

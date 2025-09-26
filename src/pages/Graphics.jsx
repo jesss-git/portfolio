@@ -1,4 +1,8 @@
 export default function Graphics() {
-    return <h1>Graphics Page</h1>;
+    return (
+      <section className="hero">
+        <h1>Graphics</h1>
+      </section>
+    );
   }
   

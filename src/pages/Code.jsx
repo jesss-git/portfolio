@@ -1,4 +1,8 @@
 export default function Code() {
-    return <h1>Code Page</h1>;
+    return (
+      <section className="hero">
+        <h1>Code</h1>
+      </section>
+    );
   }
   

@@ -1,4 +1,8 @@
 export default function Gallery() {
-    return <h1>Gallery Page</h1>;
+    return (
+      <section className="hero">
+        <h1>Gallery</h1>
+      </section>
+    );
   }
   
