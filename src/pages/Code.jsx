@@ -8,7 +8,7 @@ export default function Code() {
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
       title: "Climb Tracker App",
       date: "August 2010",
-      description: "hello hello",
+      description: "hello hello, description, description, description, description, description",
       tags: ["React", "CSS", "JavaScript"],
     },
     {
