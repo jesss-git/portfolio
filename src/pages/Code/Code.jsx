@@ -16,14 +16,18 @@ export default function Code() {
     {
       id: 2,
       image: "https://images.unsplash.com/photo-1504805572947-34fad45aed93?auto=format&fit=crop&w=800&q=80",
-      title: "Nature Data Visualizer",
-      tags: ["Python", "Flask"],
+      title: "Audio Kaleidoscope Visualizer",
+      date: "April 2025",
+      description: "Exploring computational sound, I wanted to visualize sound, creating a looper pedal effect where users can record themselves and play back audio, while observing their audio being transformed into a kaleidoscope visual.",
+      tags: ["Python"],
     },
     {
       id: 3,
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-      title: "Gear Library",
-      tags: ["React", "JavaScript", "Figma"],
+      title: "Geese Invasion",
+      date: "December 2024",
+      description: "This project features a live server that supports an interactive multiplayer game, playable on any device, where users follow a goose from a third-person perspective and can interact with those around them, coded with p5.js and Three.js.",
+      tags: ["OOP", "JavaScript"],
     },
   ];
 

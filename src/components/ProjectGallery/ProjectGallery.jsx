@@ -4,7 +4,8 @@ import "./ProjectGallery.css";
 const tagColorMap = {
   "Illustrator": "#feeabc", // orange
   "After Effects": "#dcccec", // purple
-  "JavaScript": "#fef9d6", // yellow
+  "JavaScript": "#fdf4c7", // yellow
+  "Python": "#dcf0f7", // blue
 
   "React": "#ffcbe1", // pink
   "Flask": "#d6e5bd", // green
