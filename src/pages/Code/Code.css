@@ -1,0 +1,25 @@
+.codehero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+  margin-top: -80px;
+}
+
+
+/* .code-hero {
+  height: 90vh;
+  background: url("https://picsum.photos/1600/900") no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+} */

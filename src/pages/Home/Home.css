@@ -2,7 +2,7 @@
    Hero Section
 =========================== */
 .hero {
-  height: 90vh;
+  height: 100vh;
   background: url("https://picsum.photos/1600/900") no-repeat center/cover;
   display: flex;
   align-items: center;
@@ -10,6 +10,7 @@
   position: relative;
   color: white;
   text-align: center;
+  margin-top: -80px;
 }
 
 .hero-overlay {

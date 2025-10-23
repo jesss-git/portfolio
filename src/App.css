@@ -3,14 +3,4 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.hero {
-  height: 100vh;
-  background: url("https://picsum.photos/1600/900") no-repeat center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 3rem;
-  font-weight: bold;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-}
+

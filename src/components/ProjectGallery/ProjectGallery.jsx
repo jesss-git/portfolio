@@ -2,12 +2,15 @@ import React from "react";
 import "./ProjectGallery.css";
 
 const tagColorMap = {
-  "React": "#ffcbe1", 
-  "JavaScript": "#d6e5bd", 
-  "CSS": "#f9e1a8", 
-  "Python": "#bcd8ec", 
-  "Flask": "#dcccec", 
-  "Figma": "#c0f3ea",
+  "Illustrator": "#feeabc", // orange
+  "After Effects": "#dcccec", // purple
+  "JavaScript": "#fef9d6", // yellow
+
+  "React": "#ffcbe1", // pink
+  "Flask": "#d6e5bd", // green
+  "CSS": "#f9e1a8", //
+  "Python": "#bcd8ec", // blue
+  "Figma": "#c0f3ea", // teal
 };
 
 const defaultTagColor = "#d6d6d6";

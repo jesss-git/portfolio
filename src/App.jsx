@@ -9,7 +9,7 @@ import Home from "./pages/Home/Home";
 import UXUI from "./pages/UXUI";
 import Graphics from "./pages/Graphics";
 import Gallery from "./pages/Gallery";
-import Code from "./pages/Code";
+import Code from "./pages/Code/Code";
 import About from "./pages/About";
 import Connect from './pages/Connect'
 import Footer from './components/Footer/Footer'

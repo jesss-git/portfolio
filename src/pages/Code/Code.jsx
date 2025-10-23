@@ -1,0 +1,47 @@
+import React from "react";
+import ProjectGallery from "../../components/ProjectGallery/ProjectGallery";
+import "./Code.css"
+import heroImg from "../../assets/Images/koibg.png"
+
+export default function Code() {
+  const codeProjects = [
+    {
+      id: 1,
+      image: heroImg,
+      title: "Generative Art Koi Fish",
+      date: "October 2024",
+      description: "Exoploring generative and autonomous art. This project was made using Object Oriented Programming (OOP) with p5.js, Adobe Illustrator, and Adobe After Effects, with an emphasis on the p5.play library.",
+      tags: ["OOP", "JavaScript", "Illustrator", "After Effects"],
+    },
+    {
+      id: 2,
+      image: "https://images.unsplash.com/photo-1504805572947-34fad45aed93?auto=format&fit=crop&w=800&q=80",
+      title: "Nature Data Visualizer",
+      tags: ["Python", "Flask"],
+    },
+    {
+      id: 3,
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+      title: "Gear Library",
+      tags: ["React", "JavaScript", "Figma"],
+    },
+  ];
+
+  return (
+    <>
+      <section
+        className="codehero"
+        style={{
+          backgroundImage: `url(${heroImg})`, // ✅ use imported image
+        }}
+      ></section>
+
+
+      <ProjectGallery
+        title="Featured Code Projects"
+        subtitle="Apps, tools, and experiments inspired by climbing and nature."
+        projects={codeProjects}
+      />
+    </>
+  );
+}
