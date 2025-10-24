@@ -253,6 +253,16 @@
   margin-bottom: 0.8rem;
 }
 
+.modal-link-inline {
+  color: #4b56f0; /* pastel indigo accent */
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.modal-link-inline:hover {
+  color: #2f3a9b; /* darker indigo on hover */
+}
+
 /* Section Images */
 .modal-images {
   display: grid;

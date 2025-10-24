@@ -109,11 +109,31 @@ export default function ProjectGallery({ title, projects }) {
                     <h3 className="modal-section-heading">{section.heading}</h3>
                   )}
 
-                  {section.text?.map((paragraph, i) => (
-                    <p key={i} className="modal-section-text">
-                      {paragraph}
-                    </p>
-                  ))}
+                  {section.text?.map((paragraph, i) => {
+                    // Detect links in paragraph text
+                    const urlRegex = /(https?:\/\/[^\s]+)/g;
+                    const parts = paragraph.split(urlRegex);
+
+                    return (
+                      <p key={i} className="modal-section-text">
+                        {parts.map((part, idx) =>
+                          part.match(urlRegex) ? (
+                            <a
+                              key={idx}
+                              href={part}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="modal-link-inline"
+                            >
+                              {part}
+                            </a>
+                          ) : (
+                            part
+                          )
+                        )}
+                      </p>
+                    );
+                  })}
 
                   {section.images && (
                     <div className="modal-images">
