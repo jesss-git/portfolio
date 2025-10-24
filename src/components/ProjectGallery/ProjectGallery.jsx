@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ProjectGallery.css";
 
 const tagColorMap = {
@@ -19,7 +19,7 @@ const getTagColor = (tag) => tagColorMap[tag] || defaultTagColor;
 
 export default function ProjectGallery({ title, projects }) {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
-  const [selectedProject, setSelectedProject] = React.useState(null); // 👈 added
+  const [selectedProject, setSelectedProject] = React.useState(null);
 
   React.useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -28,6 +28,13 @@ export default function ProjectGallery({ title, projects }) {
   }, []);
 
   const isDesktop = windowWidth > 800;
+
+  useEffect(() => {
+    if (!selectedProject) {
+      const videos = document.querySelectorAll(".modal-process-video");
+      videos.forEach((video) => video.pause());
+    }
+  }, [selectedProject]);
 
   return (
     <section className="gallery-section">
@@ -109,42 +116,35 @@ export default function ProjectGallery({ title, projects }) {
                     <h3 className="modal-section-heading">{section.heading}</h3>
                   )}
 
-                  {section.text?.map((paragraph, i) => {
-                    // Detect links in paragraph text
-                    const urlRegex = /(https?:\/\/[^\s]+)/g;
-                    const parts = paragraph.split(urlRegex);
-
-                    return (
-                      <p key={i} className="modal-section-text">
-                        {parts.map((part, idx) =>
-                          part.match(urlRegex) ? (
-                            <a
-                              key={idx}
-                              href={part}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="modal-link-inline"
-                            >
-                              {part}
-                            </a>
-                          ) : (
-                            part
-                          )
-                        )}
-                      </p>
-                    );
-                  })}
+                  {section.text?.map((paragraph, i) => (
+                    <p key={i} className="modal-section-text">
+                      {paragraph}
+                    </p>
+                  ))}
 
                   {section.images && (
                     <div className="modal-images">
-                      {section.images.map((img, i) => (
-                        <img
-                          key={i}
-                          src={img}
-                          alt={`Process ${i}`}
-                          className="modal-process-img"
-                        />
-                      ))}
+                      {section.images.map((media, i) => {
+                        const isVideo = /\.(mp4|webm|mov|ogg)$/i.test(media);
+                        return isVideo ? (
+                          <video
+                            key={i}
+                            src={media}
+                            className="modal-process-video"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                          />
+                        ) : (
+                          <img
+                            key={i}
+                            src={media}
+                            alt={`Process ${i}`}
+                            className="modal-process-img"
+                          />
+                        );
+                      })}
                     </div>
                   )}
                 </div>

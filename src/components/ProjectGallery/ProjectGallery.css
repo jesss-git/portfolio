@@ -271,11 +271,18 @@
   margin-top: 0.8rem;
 }
 
-.modal-process-img {
+.modal-process-img,
+.modal-process-video {
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   object-fit: cover;
+  display: block;
+}
+
+.modal-process-video {
+  max-height: 420px;
+  background: #000;
 }
 
 /* Link Button */

@@ -7,6 +7,7 @@ import geeseinvasionImg from "../../assets/Images/geeseinvasion.png"
 import kalCodeSnip1 from "../../assets/Images/kalCodeSnip1.png"
 import kalCodeSnip2 from "../../assets/Images/kalCodeSnip2.png"
 import kalCodeSnip3 from "../../assets/Images/kalCodeSnip3.png"
+import kalDemo from "../../assets/Videos/kalDemo.mov"
 
 export default function Code() {
   const codeProjects = [
@@ -92,10 +93,21 @@ export default function Code() {
           heading: "Demo",
           text: [
             "Please note: My computer is very old, so the graphics and video might not be the best quality...",
-            "Sorry in advanced."
+            "Sorry in advanced and thanks for your understanding."
           ],
-          
+          images: [
+            kalDemo,
+          ],
         },
+        {
+          heading: "Gallery",
+          text: [
+            "The following are some screenshots of kaleidoscope patterns generated throughout the demo:"
+          ],
+          images: [
+            
+          ],
+        }
       ],
       link: "https://github.com/jesss-git/Audio-Kaleidoscope-Visualizer"
     },
