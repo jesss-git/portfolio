@@ -2,12 +2,14 @@ import React from "react";
 import ProjectGallery from "../../components/ProjectGallery/ProjectGallery";
 import "./Code.css"
 import heroImg from "../../assets/Images/koibg.png"
+import kaleidoscopeImg from "../../assets/Images/kaleidoscope.png"
+import geeseinvasionImg from "../../assets/Images/geeseinvasion.png"
 
 export default function Code() {
   const codeProjects = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1504805572947-34fad45aed93?auto=format&fit=crop&w=800&q=80",
+      image: kaleidoscopeImg,
       title: "Audio Kaleidoscope Visualizer",
       date: "April 2025",
       description: "Exploring computational sound, I wanted to visualize sound, creating a looper pedal effect where users can record themselves and play back audio, while observing their audio being transformed into a kaleidoscope visual.",
@@ -15,7 +17,7 @@ export default function Code() {
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+      image: geeseinvasionImg,
       title: "Geese Invasion",
       date: "December 2024",
       description: "This project features a live server that supports an interactive multiplayer game, playable on any device, where users follow a goose from a third-person perspective and can interact with those around them, coded with p5.js and Three.js.",
