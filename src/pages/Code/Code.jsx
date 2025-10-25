@@ -2,12 +2,32 @@ import React from "react";
 import ProjectGallery from "../../components/ProjectGallery/ProjectGallery";
 import "./Code.css"
 import heroImg from "../../assets/Images/koibg.png"
-import kaleidoscopeImg from "../../assets/Images/kaleidoscope.png"
-import geeseinvasionImg from "../../assets/Images/geeseinvasion.png"
-import kalCodeSnip1 from "../../assets/Images/kalCodeSnip1.png"
-import kalCodeSnip2 from "../../assets/Images/kalCodeSnip2.png"
-import kalCodeSnip3 from "../../assets/Images/kalCodeSnip3.png"
+
+import kaleidoscopeImg from "../../assets/Images/kaleidoscope/kaleidoscope.png"
+import kalCodeSnip1 from "../../assets/Images/kaleidoscope/kalCodeSnip1.png"
+import kalCodeSnip2 from "../../assets/Images/kaleidoscope/kalCodeSnip2.png"
+import kalCodeSnip3 from "../../assets/Images/kaleidoscope/kalCodeSnip3.png"
 import kalDemo from "../../assets/Videos/kalDemo.mov"
+import kalGallery1 from "../../assets/Images/kaleidoscope/kalGallery1.png"
+import kalGallery2 from "../../assets/Images/kaleidoscope/kalGallery2.png"
+import kalGallery4 from "../../assets/Images/kaleidoscope/kalGallery4.png"
+import kalGallery6 from "../../assets/Images/kaleidoscope/kalGallery6.png"
+import kalGallery7 from "../../assets/Images/kaleidoscope/kalGallery7.png"
+import kalGallery8 from "../../assets/Images/kaleidoscope/kalGallery8.png"
+import kalGallery9 from "../../assets/Images/kaleidoscope/kalGallery9.png"
+import kalGallery10 from "../../assets/Images/kaleidoscope/kalGallery10.png"
+import kalGallery12 from "../../assets/Images/kaleidoscope/kalGallery12.png"
+import kalGallery13 from "../../assets/Images/kaleidoscope/kalGallery13.png"
+import kalGallery14 from "../../assets/Images/kaleidoscope/kalGallery14.png"
+import kalGallery15 from "../../assets/Images/kaleidoscope/kalGallery15.png"
+import kalGallery16 from "../../assets/Images/kaleidoscope/kalGallery16.png"
+import kalGallery17 from "../../assets/Images/kaleidoscope/kalGallery17.png"
+import kalGallery18 from "../../assets/Images/kaleidoscope/kalGallery18.png"
+import kalGallery19 from "../../assets/Images/kaleidoscope/kalGallery19.png"
+import kalGallery20 from "../../assets/Images/kaleidoscope/kalGallery20.png"
+import kalGallery21 from "../../assets/Images/kaleidoscope/kalGallery21.png"
+
+import geeseinvasionImg from "../../assets/Images/geeseinvasion.png"
 
 export default function Code() {
   const codeProjects = [
@@ -105,7 +125,12 @@ export default function Code() {
             "The following are some screenshots of kaleidoscope patterns generated throughout the demo:"
           ],
           images: [
-            
+            kalGallery1, kalGallery2, kalGallery4,
+            kalGallery6, kalGallery7, kalGallery8,
+            kalGallery9, kalGallery10, kalGallery12,
+            kalGallery13, kalGallery14, kalGallery15, kalGallery16,
+            kalGallery17, kalGallery18, kalGallery19, kalGallery20,
+            kalGallery21,
           ],
         }
       ],
