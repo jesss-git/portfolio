@@ -27,7 +27,9 @@ import kalGallery19 from "../../assets/Images/kaleidoscope/kalGallery19.png"
 import kalGallery20 from "../../assets/Images/kaleidoscope/kalGallery20.png"
 import kalGallery21 from "../../assets/Images/kaleidoscope/kalGallery21.png"
 
-import geeseinvasionImg from "../../assets/Images/geeseinvasion.png"
+import geeseinvasionImg from "../../assets/Images/geeseInvasion/geeseinvasion.png"
+import gooseQRcode from "../../assets/Images/geeseInvasion/gooseQRcode.png"
+import geeseDemo from "../../assets/Videos/geeseDemo.mov"
 
 export default function Code() {
   const codeProjects = [
@@ -143,6 +145,71 @@ export default function Code() {
       date: "December 2024",
       description: "This project features a live server that supports an interactive multiplayer game, playable on any device, where users follow a goose from a third-person perspective and can interact with those around them, coded with p5.js and Three.js.",
       tags: ["OOP", "JavaScript"],
+      sections: [
+        {
+          images: [
+            geeseinvasionImg,
+          ]
+        },
+        {
+          heading: "Project Overview",
+          text: [
+            "This is an interactive art piece where users can join a server and appear on screen as a goose by either copying and pasting the link into a browser or by scanning a QR code. Users are able to walk around as the goose and observe the area from a third person perspective, shadowing the goose, while seeing all the connected users live.",
+          ]
+        },
+        {
+          heading: "Artist Statement",
+          text: [
+            "The University of Waterloo has been my home for the past couple years during my time as an undergraduate student, but it is also home to many Canadian geese as well. For the final project of the course, CS/FINE 383, I wanted to somewhat recreate life on campus and the community by imitating the hordes of geese we constantly see on campus. I wanted to create a project that people could interact with and enjoy, while being able to feel as though they are in Waterloo.",
+          ],
+        },
+        {
+          heading: "Formal Qualities",
+          text: [
+            "The piece is interactive and encourages people to interact with it on various technological devices, including laptop, mobile, and tablet. In an exhibit, my laptop would start the server, displaying one goose assigned to the user in the middle and can be controlled by my laptop by pressing the arrow keys, using wasd, or by clicking on the screen directly. The goose, created in Blender, is animated and will move around based on user input and the camera follows it as a third person perspective or shadow. As people look at the piece, they will notice a QR code on a table. If they scan this, they will be able to join the server. When they join, they will be given a goose to follow and control, while being able to see all the active connected users on their screen. As users leave and disconnect from the server, their goose will disappear from other people's screens as well.",
+          ],
+          images: [
+            gooseQRcode,
+          ],
+        },
+        {
+          text: [
+            "Above is a screenshot of the QR code users can use to join the server on their devices. When they scan this, they will be connected to the server, brought to a page, be given an interactive and moveable goose, see all online users moving around, and be removed when they disconnect.",
+          ],
+        },
+        {
+          heading: "Context",
+          text: [
+            "With this piece, I really wanted to imitate and recreate the feeling of walking around on Waterloo campus and seeing the hordes of geese. One aspect I noticed and always thought was interesting was that geese would often be in very large groups or hordes which can further intimidate people. However, it can also reflect and signify the community and bond that they have with each other. For instance, when a flock of geese fly, they fly in a V formation, which helps them conserve energy and allows them to fly longer distances than if they were alone. In addition, if a goose is sick or injured, two other geese will follow it to help and protect it, either until it dies or is well enough to join the flock again. They have such a great sense of community and are often seen in large groups. I really wanted to encapsulate this idea of community and being with others through this project.",
+          ],
+        },
+        {
+          heading: "Technical Description",
+          text: [
+            "To begin, there is one main technical piece, but it involves many aspects, such as creating visuals, animations, and functionality / backend and communication with the server. I found this extremely difficult and especially hard to debug, as well as a huge learning curve, because I have never worked with Blender, Three.js, Node.js or servers before."
+          ],
+        },
+        {
+          heading: "Code Structure and Flow",
+          text: [
+            "I initially began this piece by creating a 3D animated goose in Blender, composed of 8 body parts. From there, I initially created a sketch.js file that drew the goose out on a plane and had a walking animation when the user pressed certain buttons or touched certain areas. After this, I began setting up the server that I wanted to host my project on. Once the server had all the basics, I began incorporating the 3D models and code from my initial sketch.js file into the sketchy.js file in the public --> client folder. The code begins by setting up a server. Every time someone new joins the server, socket.io assigns new parameter values to the particular client and broadcasts this information to all online users. The draw function then creates a new goose drawing for each client online. If the user moves by pressing specific keys or touching specific areas on the screen, their information or data gets updated. They will see their input in response as a walking animation. In addition, these changes that were made to particular paramters are also sent to the server. The server receives this data and broadcasts the particular changes to all the connected clients that that particular player moved. This allows all the user inputs to be shown visibly across all screens. Finally, when a user disconnects, the particular player will be deleted from the list of online players and be cleared from the display."
+          ],
+        },
+        {
+          heading: "Key Aspect",
+          text: [
+            "One key aspect of this project would be creating all the 3D geometries in Blender, then creating the goose and animation in p5.js. Creating this code, I did a lot of brute forcing and set very specific parameters. However, one interesting way I decided to create the animation was setting up the legs a particular way. With the legs, I used push() and pop() functions so taht the particular translations I was using would not affect other aspects later on. I also decided to 'connect' all three limbs of the leg, topLeg, botLeg, and foot. This made it much easier to control translations with the limbs together. This is because I wanted to best imitate 'rigging' animations and prevent really awkward motions between these particular joints and components. By connecting all these ligaments to each other and referencing their positions, it made it a lot easier to animate and move the components.",
+            "Another key aspect was figuring out how to identify which goose to move, replicate it on other clients, while keeping the camera focused on the client's goose. To try and solve this, I created a for loop within the draw function that would 'draw' a new goose for every online user. Outside of the loop, I would identify whether the user that moved was the user on that client, using socket.id. If it was, then their translation would be updated, as well as their camera. After updating their location, I would emit these new data points (x, y) to the server. The server would receive them, update the coordinates of the particular client with specified id, then broadcast it out to all other online clients."
+          ],
+        },
+        {
+          heading: "Demo",
+          images: [
+            geeseDemo,
+          ],
+        },
+      ],
+      link: "https://github.com/jesss-git/Geese-Invasion"
     },
     {
       id: 3,
@@ -152,8 +219,7 @@ export default function Code() {
       description: "Exoploring generative and autonomous art. This project was made using Object Oriented Programming (OOP) with p5.js, Adobe Illustrator, and Adobe After Effects, with an emphasis on the p5.play library.",
       tags: ["OOP", "JavaScript", "Illustrator", "After Effects"],
     },
-    
-    
+
   ];
 
   return (
